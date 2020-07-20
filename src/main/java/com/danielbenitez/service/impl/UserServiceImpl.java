@@ -56,4 +56,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		return authentication.getName();
 	}
+
+	@Override
+	public Long getUserId() {
+		String username = getCurrentUser();
+		return userRepository.findByUsername(username).getId();
+	}
 }

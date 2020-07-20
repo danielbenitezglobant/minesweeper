@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="minesweeper-daniel-benitez" />
         <module name="spring-boot-security-oauth2-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="minesweeper-daniel-benitez" target="1.8" />
       <module name="spring-boot-security-oauth2-example" target="1.8" />
     </bytecodeTargetLevel>
   </component>

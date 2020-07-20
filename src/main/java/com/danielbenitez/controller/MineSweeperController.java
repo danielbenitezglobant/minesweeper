@@ -1,5 +1,6 @@
 package com.danielbenitez.controller;
 
+import com.danielbenitez.model.Board;
 import com.danielbenitez.service.MineSweeperService;
 import com.danielbenitez.service.UserService;
 import com.danielbenitez.viewmodel.BoardViewModel;
@@ -18,7 +19,7 @@ public class MineSweeperController {
     private UserService userService;
 
     @RequestMapping(value="/uncover-cell", method = RequestMethod.POST)
-    public boolean uncoverCell(@RequestBody int x, int y){
+    public boolean uncoverCell(@RequestBody int x, @RequestParam int y){
         final String currentUser = userService.getCurrentUser();
 
         return mineSweeperService.uncoverCell(currentUser, x, y);
@@ -31,21 +32,21 @@ public class MineSweeperController {
     }
 
     @RequestMapping(value="/mark-cell-question", method = RequestMethod.POST)
-    public boolean markCellQuestion(@RequestBody int x, int y){
+    public boolean markCellQuestion(@RequestBody int x, @RequestParam int y){
         final String currentUser = userService.getCurrentUser();
         return mineSweeperService.markCellQuestion(currentUser, x, y);
     }
 
     @RequestMapping(value="/mark-cell-red-flag", method = RequestMethod.POST)
-    public boolean markCellRedFlag(@RequestBody int x, int y){
+    public boolean markCellRedFlag(@RequestBody int x, @RequestParam int y){
         final String currentUser = userService.getCurrentUser();
         return mineSweeperService.markCellRedFlag(currentUser, x, y);
     }
 
     @RequestMapping(value="/create-new-game", method = RequestMethod.POST)
-    public boolean createNewGame(@RequestBody int rows, int columns, int mines){
+    public boolean createNewGame(@RequestBody Board board){
         final String currentUser = userService.getCurrentUser();
-        return mineSweeperService.createNewGame(currentUser, rows, columns, mines);
+        return mineSweeperService.createNewGame(currentUser, board.getRowsNumber(), board.getColumnsNumber(), board.getMines());
     }
 
     @RequestMapping(value="/resume-game", method = RequestMethod.POST)

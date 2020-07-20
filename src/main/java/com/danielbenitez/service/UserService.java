@@ -10,4 +10,5 @@ public interface UserService {
     List<User> findAll();
     void delete(long id);
     String getCurrentUser();
+    Long getUserId();
 }

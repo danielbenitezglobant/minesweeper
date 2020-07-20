@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="afa4306d-4d18-496e-9041-7c184dabd6e8" name="Default Changelist" comment="" />
+    <list default="true" id="afa4306d-4d18-496e-9041-7c184dabd6e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minesweeper-daniel-benitez.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/model/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/model/SavedGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/repository/BoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/repository/SavedGameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/CellViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/controller/MineSweeperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/controller/MineSweeperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/BoardViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/BoardViewModel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +31,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1euvf9HIedW1Ngh6poMfKo6ueLy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,15 +42,32 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.danielbenitez.model" />
+      <recent name="com.danielbenitez.repository" />
+      <recent name="com.danielbenitez.viewmodel" />
       <recent name="com.devglan.service.impl" />
       <recent name="com.devglan.controller" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Application (1)">
+    <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.danielbenitez.Application" />
+      <module name="minesweeper-daniel-benitez" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.danielbenitez.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.danielbenitez.Application" />
       <module name="spring-boot-security-oauth2-example" />
@@ -47,6 +83,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
@@ -65,10 +102,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1595199557944">
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1595283696474">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1595199557944" />
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1595283696474" />
     <state x="530" y="213" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595198631815">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -89,54 +126,58 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="562" y="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1595198830587" />
-    <state width="1340" height="300" key="DebuggerActiveHint" timestamp="1595198284389">
+    <state width="547" height="300" key="DebuggerActiveHint" timestamp="1595285706384">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1340" height="300" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1595198284389" />
+    <state width="547" height="300" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1595285706384" />
     <state x="580" y="150" key="FileChooserDialogImpl" timestamp="1595195444139">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="150" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1595195444139" />
-    <state width="1557" height="309" key="GridCell.Tab.0.bottom" timestamp="1595254741565">
+    <state width="1557" height="239" key="GridCell.Tab.0.bottom" timestamp="1595285619940">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
-    <state width="1557" height="309" key="GridCell.Tab.0.center" timestamp="1595254741565">
+    <state width="1557" height="239" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
+    <state width="1557" height="239" key="GridCell.Tab.0.center" timestamp="1595285619940">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
-    <state width="1557" height="309" key="GridCell.Tab.0.left" timestamp="1595254741565">
+    <state width="1557" height="239" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
+    <state width="1557" height="239" key="GridCell.Tab.0.left" timestamp="1595285619940">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
-    <state width="1557" height="309" key="GridCell.Tab.0.right" timestamp="1595254741565">
+    <state width="1557" height="239" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
+    <state width="1557" height="239" key="GridCell.Tab.0.right" timestamp="1595285619940">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
-    <state width="1557" height="309" key="GridCell.Tab.1.bottom" timestamp="1595254915931">
+    <state width="1557" height="239" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
+    <state width="1557" height="239" key="GridCell.Tab.1.bottom" timestamp="1595285655330">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
-    <state width="1557" height="309" key="GridCell.Tab.1.center" timestamp="1595254915931">
+    <state width="1557" height="239" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595285655330" />
+    <state width="1557" height="239" key="GridCell.Tab.1.center" timestamp="1595285655330">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
-    <state width="1557" height="309" key="GridCell.Tab.1.left" timestamp="1595254915931">
+    <state width="1557" height="239" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1595285655330" />
+    <state width="1557" height="239" key="GridCell.Tab.1.left" timestamp="1595285655329">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
-    <state width="1557" height="309" key="GridCell.Tab.1.right" timestamp="1595254915931">
+    <state width="1557" height="239" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1595285655329" />
+    <state width="1557" height="239" key="GridCell.Tab.1.right" timestamp="1595285655330">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="309" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
+    <state width="1557" height="239" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1595285655330" />
     <state x="467" y="135" key="NewModule_or_Project.wizard" timestamp="1595195446294">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="467" y="135" key="NewModule_or_Project.wizard/0.0.1600.860@0.0.1600.860" timestamp="1595195446294" />
-    <state x="508" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1595252405681">
+    <state width="435" height="438" key="XDebugger.FullValuePopup" timestamp="1595285058737">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="508" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1595252405681" />
+    <state width="435" height="438" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1595285058737" />
+    <state x="508" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1595282770099">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="508" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1595282770099" />
     <state x="507" y="64" width="644" height="732" key="find.popup" timestamp="1595254751218">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -180,9 +221,39 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/controller/UserController.java</url>
-          <line>20</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>61</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
