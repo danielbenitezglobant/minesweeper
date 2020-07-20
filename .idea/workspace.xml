@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="afa4306d-4d18-496e-9041-7c184dabd6e8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1euvf9HIedW1Ngh6poMfKo6ueLy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devglan.service.impl" />
+      <recent name="com.devglan.controller" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.danielbenitez.Application" />
+      <module name="spring-boot-security-oauth2-example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.danielbenitez.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="afa4306d-4d18-496e-9041-7c184dabd6e8" name="Default Changelist" comment="" />
+      <created>1595184392651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595184392651</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1595199557944">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1595199557944" />
+    <state x="530" y="213" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595198631815">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="213" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1595198631815" />
+    <state x="601" y="321" width="398" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1595198655339">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="601" y="321" width="398" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1595198655339" />
+    <state x="320" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595200177623">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="320" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1595200177623" />
+    <state x="555" y="139" key="#xdebugger.evaluate" timestamp="1595187489100">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="555" y="139" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1595187489100" />
+    <state x="562" y="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595198830587">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="562" y="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1595198830587" />
+    <state width="1340" height="300" key="DebuggerActiveHint" timestamp="1595198284389">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1340" height="300" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1595198284389" />
+    <state x="580" y="150" key="FileChooserDialogImpl" timestamp="1595195444139">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="150" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1595195444139" />
+    <state width="1557" height="309" key="GridCell.Tab.0.bottom" timestamp="1595254741565">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
+    <state width="1557" height="309" key="GridCell.Tab.0.center" timestamp="1595254741565">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
+    <state width="1557" height="309" key="GridCell.Tab.0.left" timestamp="1595254741565">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
+    <state width="1557" height="309" key="GridCell.Tab.0.right" timestamp="1595254741565">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1595254741565" />
+    <state width="1557" height="309" key="GridCell.Tab.1.bottom" timestamp="1595254915931">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
+    <state width="1557" height="309" key="GridCell.Tab.1.center" timestamp="1595254915931">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
+    <state width="1557" height="309" key="GridCell.Tab.1.left" timestamp="1595254915931">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
+    <state width="1557" height="309" key="GridCell.Tab.1.right" timestamp="1595254915931">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="309" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1595254915931" />
+    <state x="467" y="135" key="NewModule_or_Project.wizard" timestamp="1595195446294">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="467" y="135" key="NewModule_or_Project.wizard/0.0.1600.860@0.0.1600.860" timestamp="1595195446294" />
+    <state x="508" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1595252405681">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="508" y="257" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1595252405681" />
+    <state x="507" y="64" width="644" height="732" key="find.popup" timestamp="1595254751218">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="507" y="64" width="644" height="732" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1595254751218" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1595201975234">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1595201975234" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.3.RELEASE/spring-security-core-4.2.3.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.3.RELEASE/spring-security-core-4.2.3.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.3.RELEASE/spring-security-core-4.2.3.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.3.RELEASE/spring-security-core-4.2.3.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.3.RELEASE/spring-security-core-4.2.3.RELEASE-sources.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/controller/UserController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/controller/UserController.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
