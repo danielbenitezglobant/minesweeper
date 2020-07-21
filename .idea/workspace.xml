@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afa4306d-4d18-496e-9041-7c184dabd6e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minesweeper-daniel-benitez.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/model/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/model/SavedGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/repository/BoardRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/repository/SavedGameRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/CellViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/BoardQueueViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/CellXYViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/XYViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/controller/MineSweeperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/controller/MineSweeperController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/repository/BoardRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/BoardViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danielbenitez/viewmodel/BoardViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +40,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.danielbenitez.viewmodel" />
       <recent name="com.danielbenitez.model" />
       <recent name="com.danielbenitez.repository" />
-      <recent name="com.danielbenitez.viewmodel" />
       <recent name="com.devglan.service.impl" />
       <recent name="com.devglan.controller" />
     </key>
@@ -102,10 +95,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1595283696474">
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1595290220392">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1595283696474" />
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1595290220392" />
     <state x="530" y="213" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595198631815">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -118,62 +111,62 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="320" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1595200177623" />
-    <state x="555" y="139" key="#xdebugger.evaluate" timestamp="1595187489100">
+    <state x="555" y="139" key="#xdebugger.evaluate" timestamp="1595297317654">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="555" y="139" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1595187489100" />
+    <state x="555" y="139" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1595297317654" />
     <state x="562" y="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595198830587">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="562" y="311" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1595198830587" />
-    <state width="547" height="300" key="DebuggerActiveHint" timestamp="1595285706384">
+    <state width="547" height="300" key="DebuggerActiveHint" timestamp="1595301290591">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="547" height="300" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1595285706384" />
+    <state width="547" height="300" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1595301290591" />
     <state x="580" y="150" key="FileChooserDialogImpl" timestamp="1595195444139">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="150" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1595195444139" />
-    <state width="1557" height="239" key="GridCell.Tab.0.bottom" timestamp="1595285619940">
+    <state width="1557" height="286" key="GridCell.Tab.0.bottom" timestamp="1595300965661">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
-    <state width="1557" height="239" key="GridCell.Tab.0.center" timestamp="1595285619940">
+    <state width="1557" height="286" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595300965661" />
+    <state width="1557" height="286" key="GridCell.Tab.0.center" timestamp="1595300965661">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
-    <state width="1557" height="239" key="GridCell.Tab.0.left" timestamp="1595285619940">
+    <state width="1557" height="286" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1595300965661" />
+    <state width="1557" height="286" key="GridCell.Tab.0.left" timestamp="1595300965661">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
-    <state width="1557" height="239" key="GridCell.Tab.0.right" timestamp="1595285619940">
+    <state width="1557" height="286" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1595300965661" />
+    <state width="1557" height="286" key="GridCell.Tab.0.right" timestamp="1595300965661">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1595285619940" />
-    <state width="1557" height="239" key="GridCell.Tab.1.bottom" timestamp="1595285655330">
+    <state width="1557" height="286" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1595300965661" />
+    <state width="1557" height="286" key="GridCell.Tab.1.bottom" timestamp="1595300992943">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595285655330" />
-    <state width="1557" height="239" key="GridCell.Tab.1.center" timestamp="1595285655330">
+    <state width="1557" height="286" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595300992943" />
+    <state width="1557" height="286" key="GridCell.Tab.1.center" timestamp="1595300992943">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1595285655330" />
-    <state width="1557" height="239" key="GridCell.Tab.1.left" timestamp="1595285655329">
+    <state width="1557" height="286" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1595300992943" />
+    <state width="1557" height="286" key="GridCell.Tab.1.left" timestamp="1595300992943">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1595285655329" />
-    <state width="1557" height="239" key="GridCell.Tab.1.right" timestamp="1595285655330">
+    <state width="1557" height="286" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1595300992943" />
+    <state width="1557" height="286" key="GridCell.Tab.1.right" timestamp="1595300992943">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="239" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1595285655330" />
+    <state width="1557" height="286" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1595300992943" />
     <state x="467" y="135" key="NewModule_or_Project.wizard" timestamp="1595195446294">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="467" y="135" key="NewModule_or_Project.wizard/0.0.1600.860@0.0.1600.860" timestamp="1595195446294" />
-    <state width="435" height="438" key="XDebugger.FullValuePopup" timestamp="1595285058737">
+    <state width="435" height="438" key="XDebugger.FullValuePopup" timestamp="1595301290588">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="435" height="438" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1595285058737" />
+    <state width="435" height="438" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1595301290588" />
     <state x="508" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1595282770099">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -222,38 +215,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
-          <line>61</line>
+          <line>93</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
-          <line>98</line>
+          <line>143</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
-          <line>118</line>
+          <line>163</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
-          <line>94</line>
+          <line>139</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>185</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danielbenitez/service/impl/MineSweeperServiceImpl.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

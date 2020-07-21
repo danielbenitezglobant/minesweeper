@@ -2,11 +2,12 @@ package com.danielbenitez.service.impl;
 
 import com.danielbenitez.model.Board;
 import com.danielbenitez.repository.BoardRepository;
-import com.danielbenitez.repository.UserRepository;
 import com.danielbenitez.service.MineSweeperService;
 import com.danielbenitez.service.UserService;
+import com.danielbenitez.viewmodel.BoardQueueViewModel;
 import com.danielbenitez.viewmodel.BoardViewModel;
 import com.danielbenitez.viewmodel.CellViewModel;
+import com.danielbenitez.viewmodel.CellXYViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Service(value = "mineSweeperService")
 public class MineSweeperServiceImpl implements MineSweeperService {
-	
+
+	private static final String SEPARATOR_CHAR = "\\*";
+	CellViewModel[][] cells;
 	@Autowired
 	private UserService userService;
 	@Autowired
@@ -24,7 +27,36 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 
 	@Override
 	public boolean uncoverCell(String currentUser, int x, int y) {
-		//To be implemented...
+		Queue<CellXYViewModel> auxQ;
+		long userId = this.userService.getUserId();
+		Board board = boardRepository.findByUserId(userId);
+		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
+		if(cells[x][y].getContent().equals("M")) {
+			//game over
+			return false;
+		}
+		CellXYViewModel cellToUncover = new CellXYViewModel(x,y);
+		Queue<CellXYViewModel> q = new LinkedList<CellXYViewModel>();
+		q.add(cellToUncover);
+		while(!q.isEmpty()) {
+			cellToUncover = q.element();
+			q.remove();
+			BoardQueueViewModel boardQueueViewModel = this.getCellsWithoutMines(cellToUncover, board.getRowsNumber(), board.getColumnsNumber());
+			cells[cellToUncover.getX()][cellToUncover.getY()].setContent(String.valueOf(boardQueueViewModel.getNumberOfMinesAround()));
+			if(boardQueueViewModel.getNumberOfMinesAround() == 0) {
+				while (!boardQueueViewModel.getQ().isEmpty()) {
+					q.add(boardQueueViewModel.getQ().element());
+					boardQueueViewModel.getQ().remove();
+				}
+			}
+		}
+		String flattedCells = this.flatCells(cells);
+		board.setCells(flattedCells);
+		try {
+			boardRepository.save(board);
+		} catch (Exception e) {
+			//logging and exception throwing to be implemented...
+		}
 		return true;
 	}
 
@@ -70,13 +102,26 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		boardModel.setColumnsNumber(columns);
 		boardModel.setMines(mines);
 		boardModel.setUserId(userId);
+		boardModel.setStatus("active");
 		try {
 			boardRepository.save(boardModel);
-		}catch (Exception e) {
+		} catch (Exception e) {
 			//logging and exception throwing to be implemented...
 		}
 
 		return true;
+	}
+
+	@Override
+	public boolean resumeGame(String currentUser, String saveGameId) {
+		//To be implemented...
+		return true;
+	}
+
+	@Override
+	public List<String> getSavedGamesList(String currentUser) {
+		//To be implemented...
+		return new ArrayList<String>();
 	}
 
 	private String flatCells(CellViewModel[][] board) {
@@ -87,10 +132,10 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		for (CellViewModel[] row : board) {
 			flatRow = "";
 			for (CellViewModel cell : row) {
-				flatCell = cell.getContent() + cell.getMark();
+				flatCell = cell.getContent() + cell.getMark() + SEPARATOR_CHAR;
 				flatRow += flatCell;
 			}
-			flatBoard += flatRow;
+			flatBoard += flatRow + ",";
 		}
 		return flatBoard;
 	}
@@ -119,15 +164,128 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		return cells;
 	}
 
-	@Override
-	public boolean resumeGame(String currentUser, String saveGameId) {
-		//To be implemented...
-		return true;
+	private CellViewModel[][] parseCells(String cells, int rowsNumber, int columnsNumber) {
+
+		CellViewModel[][] cellsViewModel = new CellViewModel[rowsNumber][columnsNumber];
+		CellViewModel cellViewModel;
+		String[] rows = cells.split(",");
+		int i = 0;
+		int j = 0;
+		for(String row : rows) {
+			String[] columns = row.split(SEPARATOR_CHAR);
+			for (String column : columns) {
+				cellViewModel = new CellViewModel();
+				cellViewModel.setContent(column.substring(0,1));
+				cellViewModel.setMark(column.substring(1,2));
+				cellsViewModel[i][j] = cellViewModel;
+				j++;
+			}
+			j = 0;
+			i++;
+		}
+		return cellsViewModel;
+
 	}
 
-	@Override
-	public List<String> getSavedGamesList(String currentUser) {
-		//To be implemented...
-		return new ArrayList<String>();
+	private BoardQueueViewModel getCellsWithoutMines(CellXYViewModel cellToUncover, int rows, int columns) {
+		int mines = 0;
+		Queue<CellXYViewModel> q = new LinkedList<>();
+		BoardQueueViewModel boardQueueViewModel = new BoardQueueViewModel();
+
+		// North
+		if (this.isValid(cellToUncover.getX()-1, cellToUncover.getY(), rows, columns))	{
+			if (cells[cellToUncover.getX()-1][cellToUncover.getY()].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX()-1][cellToUncover.getY()].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX() - 1, cellToUncover.getY()));
+				}
+			}
+		}
+
+		// South
+		if (this.isValid(cellToUncover.getX()+1, cellToUncover.getY(), rows, columns))	{
+			if (cells[cellToUncover.getX()+1][cellToUncover.getY()].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX() + 1][cellToUncover.getY()].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX() + 1, cellToUncover.getY()));
+				}
+			}
+		}
+
+		// East
+		if (this.isValid(cellToUncover.getX(), cellToUncover.getY() + 1, rows, columns))	{
+			if (cells[cellToUncover.getX()][cellToUncover.getY()+1].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX()][cellToUncover.getY() + 1].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX(), cellToUncover.getY() + 1));
+				}
+			}
+		}
+
+		// West
+		if (this.isValid(cellToUncover.getX(), cellToUncover.getY() - 1, rows, columns))	{
+			if (cells[cellToUncover.getX()][cellToUncover.getY() - 1].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX()][cellToUncover.getY() - 1].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX(), cellToUncover.getY() - 1));
+				}
+			}
+		}
+
+		// North-East
+		if (this.isValid(cellToUncover.getX() - 1, cellToUncover.getY() + 1, rows, columns))	{
+			if (cells[cellToUncover.getX() - 1][cellToUncover.getY() + 1].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX() - 1][cellToUncover.getY() + 1].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX() - 1,cellToUncover.getY() + 1));
+				}
+			}
+		}
+
+		// North-West
+		if (this.isValid(cellToUncover.getX() - 1, cellToUncover.getY() - 1, rows, columns))	{
+			if (cells[cellToUncover.getX() - 1][cellToUncover.getY() - 1].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX() - 1][cellToUncover.getY() - 1].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX() - 1, cellToUncover.getY() - 1));
+				}
+			}
+		}
+
+		// South-East
+		if (this.isValid(cellToUncover.getX() + 1, cellToUncover.getY() + 1, rows, columns))	{
+			if (cells[cellToUncover.getX() + 1][cellToUncover.getY() + 1].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX() + 1][cellToUncover.getY() + 1].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX() + 1, cellToUncover.getY() + 1));
+				}
+			}
+		}
+
+		// South-West
+		if (this.isValid(cellToUncover.getX() + 1, cellToUncover.getY() - 1, rows, columns))	{
+			if (cells[cellToUncover.getX() + 1][cellToUncover.getY() - 1].getContent().equals("M")) {
+				mines++;
+			} else {
+				if (cells[cellToUncover.getX() + 1][cellToUncover.getY() - 1].getContent().equals("C")) {
+					q.add(new CellXYViewModel(cellToUncover.getX() + 1, cellToUncover.getY() - 1));
+				}
+			}
+		}
+		boardQueueViewModel.setNumberOfMinesAround(mines);
+		boardQueueViewModel.setQ(q);
+
+		return boardQueueViewModel;
+	}
+
+	private boolean isValid(int x, int y, int rows, int columns) {
+		return x>=0 && x<rows && y>=0 && y<columns;
 	}
 }

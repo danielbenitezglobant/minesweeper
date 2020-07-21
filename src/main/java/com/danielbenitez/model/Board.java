@@ -20,6 +20,8 @@ public class Board {
     private String cells;
     @Column
     private int mines;
+    @Column
+    private String status;
 
     public long getId() {
         return id;
@@ -67,5 +69,13 @@ public class Board {
 
     public void setMines(int mines) {
         this.mines = mines;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

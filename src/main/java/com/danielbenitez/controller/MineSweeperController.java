@@ -4,6 +4,8 @@ import com.danielbenitez.model.Board;
 import com.danielbenitez.service.MineSweeperService;
 import com.danielbenitez.service.UserService;
 import com.danielbenitez.viewmodel.BoardViewModel;
+import com.danielbenitez.viewmodel.CellXYViewModel;
+import com.danielbenitez.viewmodel.XYViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,10 +21,10 @@ public class MineSweeperController {
     private UserService userService;
 
     @RequestMapping(value="/uncover-cell", method = RequestMethod.POST)
-    public boolean uncoverCell(@RequestBody int x, @RequestParam int y){
+    public boolean uncoverCell(@RequestBody XYViewModel xYViewModel){
         final String currentUser = userService.getCurrentUser();
 
-        return mineSweeperService.uncoverCell(currentUser, x, y);
+        return mineSweeperService.uncoverCell(currentUser, xYViewModel.getX(), xYViewModel.getY());
     }
 
     @RequestMapping(value = "/board", method = RequestMethod.GET)
