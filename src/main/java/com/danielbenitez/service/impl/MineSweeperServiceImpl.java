@@ -1,16 +1,16 @@
 package com.danielbenitez.service.impl;
 
 import com.danielbenitez.model.Board;
+import com.danielbenitez.model.SavedGame;
 import com.danielbenitez.repository.BoardRepository;
+import com.danielbenitez.repository.SavedGameRepository;
 import com.danielbenitez.service.MineSweeperService;
 import com.danielbenitez.service.UserService;
-import com.danielbenitez.viewmodel.BoardQueueViewModel;
-import com.danielbenitez.viewmodel.BoardViewModel;
-import com.danielbenitez.viewmodel.CellViewModel;
-import com.danielbenitez.viewmodel.CellXYViewModel;
+import com.danielbenitez.viewmodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -24,12 +24,13 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 	private UserService userService;
 	@Autowired
 	private BoardRepository boardRepository;
+	@Autowired
+	private SavedGameRepository savedGameRepository;
 
 	@Override
 	public boolean uncoverCell(String currentUser, int x, int y) {
-		Queue<CellXYViewModel> auxQ;
 		long userId = this.userService.getUserId();
-		Board board = boardRepository.findByUserId(userId);
+		Board board = boardRepository.findByUserIdActiveStatus(userId);
 		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
 		if(cells[x][y].getContent().equals("M")) {
 			//game over
@@ -62,19 +63,44 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 
 	@Override
 	public BoardViewModel getCurrentBoard(String currentUser) {
-		//To be implemented...
-		return new BoardViewModel();
+		long userId = this.userService.getUserId();
+		Board board = boardRepository.findByUserIdActiveStatus(userId);
+		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
+		BoardViewModel boardViewModel = new BoardViewModel();
+		boardViewModel.setBoard(cells);
+		boardViewModel.setStatus("active");
+		return boardViewModel;
 	}
 
 	@Override
 	public boolean markCellQuestion(String currentUser, int x, int y){
-		//To be implemented...
+		long userId = this.userService.getUserId();
+		Board board = boardRepository.findByUserIdActiveStatus(userId);
+		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
+		cells[x][y].setMark("?");
+		String flattedCells = this.flatCells(cells);
+		board.setCells(flattedCells);
+		try {
+			boardRepository.save(board);
+		} catch(Exception e) {
+			//logging and exception throwing to be implemented...
+		}
 		return true;
 	}
 
 	@Override
 	public boolean markCellRedFlag(String currentUser, int x, int y) {
-		//To be implemented...
+		long userId = this.userService.getUserId();
+		Board board = boardRepository.findByUserIdActiveStatus(userId);
+		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
+		cells[x][y].setMark("F");
+		String flattedCells = this.flatCells(cells);
+		board.setCells(flattedCells);
+		try {
+			boardRepository.save(board);
+		} catch(Exception e) {
+			//logging and exception throwing to be implemented...
+		}
 		return true;
 	}
 
@@ -103,9 +129,12 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		boardModel.setMines(mines);
 		boardModel.setUserId(userId);
 		boardModel.setStatus("active");
+		boardModel.setStartedDateTime(new Timestamp(System.currentTimeMillis()));
 		try {
+			boardRepository.setAsInactiveAllCurrentUserBoard(userId);
 			boardRepository.save(boardModel);
 		} catch (Exception e) {
+			int a = 1;
 			//logging and exception throwing to be implemented...
 		}
 
@@ -113,15 +142,43 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 	}
 
 	@Override
-	public boolean resumeGame(String currentUser, String saveGameId) {
-		//To be implemented...
+	public boolean resumeGame(String currentUser, long id) {
+		long userId = this.userService.getUserId();
+		SavedGame savedGame = savedGameRepository.findSavedGameByIdAndUserId(id, userId);
+		try {
+			boardRepository.setAsInactiveAllCurrentUserBoard(userId);
+			Board board = boardRepository.findByIdAndUserId(savedGame.getBoardId(), userId);
+			board.setStatus("active");
+			boardRepository.save(board);
+		} catch (Exception e) {
+			//logging and exception throwing to be implemented...
+		}
 		return true;
 	}
 
 	@Override
-	public List<String> getSavedGamesList(String currentUser) {
-		//To be implemented...
-		return new ArrayList<String>();
+	public List<SavedGameViewModel> getSavedGamesList(String currentUser) {
+		long userId = this.userService.getUserId();
+		List<SavedGameViewModel> savedGameViewModelList;
+		List<SavedGame> savedGameList = savedGameRepository.findSavedGameByUserId(userId);
+		savedGameViewModelList = mapperSavedGamesToViewModel(savedGameList);
+		return savedGameViewModelList;
+	}
+
+	@Override
+	public boolean saveGame(String currentUser, String saveGameId) {
+		long userId = this.userService.getUserId();
+		Board board = boardRepository.findByUserIdActiveStatus(userId);
+		SavedGame savedGame = new SavedGame();
+		savedGame.setUserId(userId);
+		savedGame.setSavedGameId(saveGameId);
+		savedGame.setBoardId(board.getId());
+		try {
+			savedGameRepository.save(savedGame);
+		} catch (Exception e) {
+			//logging and exception throwing to be implemented...
+		}
+		return true;
 	}
 
 	private String flatCells(CellViewModel[][] board) {
@@ -287,5 +344,13 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 
 	private boolean isValid(int x, int y, int rows, int columns) {
 		return x>=0 && x<rows && y>=0 && y<columns;
+	}
+
+	private List<SavedGameViewModel> mapperSavedGamesToViewModel(List<SavedGame> savedGameList) {
+		List<SavedGameViewModel> savedGameViewModel = new ArrayList<>();
+		savedGameList.stream().forEach(s -> {
+			savedGameViewModel.add(new SavedGameViewModel(s.getId(), s.getSavedGameId()));
+		});
+		return  savedGameViewModel;
 	}
 }

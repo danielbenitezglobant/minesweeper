@@ -14,8 +14,39 @@ public class SavedGame {
     @Column
     private long userId;
     @Column
-    private String savedGameId;
+    private long boardId;
     @Column
-    private Timestamp startedDateTime;
+    private String savedGameId;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public String getSavedGameId() {
+        return savedGameId;
+    }
+
+    public void setSavedGameId(String savedGameId) {
+        this.savedGameId = savedGameId;
+    }
+
+    public long getBoardId() {
+        return boardId;
+    }
+
+    public void setBoardId(long boardId) {
+        this.boardId = boardId;
+    }
 }

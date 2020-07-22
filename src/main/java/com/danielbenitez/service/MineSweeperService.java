@@ -1,6 +1,7 @@
 package com.danielbenitez.service;
 
 import com.danielbenitez.viewmodel.BoardViewModel;
+import com.danielbenitez.viewmodel.SavedGameViewModel;
 
 import java.util.List;
 
@@ -17,7 +18,9 @@ public interface MineSweeperService {
 
     boolean createNewGame(String currentUser, int rows, int columns, int mines);
 
-    boolean resumeGame(String currentUser, String saveGameId);
+    boolean resumeGame(String currentUser, long saveGameId);
 
-    List<String> getSavedGamesList(String currentUser);
+    List<SavedGameViewModel> getSavedGamesList(String currentUser);
+
+    boolean saveGame(String currentUser, String saveGameId);
 }

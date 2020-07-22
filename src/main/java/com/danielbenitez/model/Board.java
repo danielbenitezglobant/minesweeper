@@ -3,6 +3,7 @@ package com.danielbenitez.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 public class Board {
@@ -22,6 +23,8 @@ public class Board {
     private int mines;
     @Column
     private String status;
+    @Column
+    private Timestamp startedDateTime;
 
     public long getId() {
         return id;
@@ -77,5 +80,13 @@ public class Board {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Timestamp getStartedDateTime() {
+        return startedDateTime;
+    }
+
+    public void setStartedDateTime(Timestamp startedDateTime) {
+        this.startedDateTime = startedDateTime;
     }
 }
