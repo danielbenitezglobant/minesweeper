@@ -1,5 +1,8 @@
 package com.danielbenitez.service.impl;
 
+import com.danielbenitez.controller.LoggingController;
+import com.danielbenitez.exception.GameOverException;
+import com.danielbenitez.exception.OutOfBoundsException;
 import com.danielbenitez.model.Board;
 import com.danielbenitez.model.SavedGame;
 import com.danielbenitez.repository.BoardRepository;
@@ -14,11 +17,16 @@ import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 
 @Service(value = "mineSweeperService")
 public class MineSweeperServiceImpl implements MineSweeperService {
 
 	private static final String SEPARATOR_CHAR = "\\*";
+	private static final int MAX_ROW = 100;
+	private int MAX_COLUMN = 100;
 	CellViewModel[][] cells;
 	@Autowired
 	private UserService userService;
@@ -27,14 +35,19 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 	@Autowired
 	private SavedGameRepository savedGameRepository;
 
+	Logger logger = LogManager.getLogger(LoggingController.class);
+
 	@Override
 	public boolean uncoverCell(String currentUser, int x, int y) {
+
 		long userId = this.userService.getUserId();
 		Board board = boardRepository.findByUserIdActiveStatus(userId);
+		if(x >= board.getColumnsNumber() || x < 0 || y >= board.getRowsNumber() || y < 0)
+			throw new OutOfBoundsException();
+
 		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
 		if(cells[x][y].getContent().equals("M")) {
-			//game over
-			return false;
+			throw new GameOverException();
 		}
 		CellXYViewModel cellToUncover = new CellXYViewModel(x,y);
 		Queue<CellXYViewModel> q = new LinkedList<CellXYViewModel>();
@@ -56,7 +69,7 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		try {
 			boardRepository.save(board);
 		} catch (Exception e) {
-			//logging and exception throwing to be implemented...
+			logger.error("Error: " + e.getMessage());
 		}
 		return true;
 	}
@@ -76,6 +89,8 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 	public boolean markCellQuestion(String currentUser, int x, int y){
 		long userId = this.userService.getUserId();
 		Board board = boardRepository.findByUserIdActiveStatus(userId);
+		if(x >= board.getColumnsNumber() || x < 0 || y >= board.getRowsNumber() || y < 0)
+			throw new OutOfBoundsException();
 		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
 		cells[x][y].setMark("?");
 		String flattedCells = this.flatCells(cells);
@@ -83,7 +98,7 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		try {
 			boardRepository.save(board);
 		} catch(Exception e) {
-			//logging and exception throwing to be implemented...
+			logger.error("Error: " + e.getMessage());
 		}
 		return true;
 	}
@@ -92,6 +107,8 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 	public boolean markCellRedFlag(String currentUser, int x, int y) {
 		long userId = this.userService.getUserId();
 		Board board = boardRepository.findByUserIdActiveStatus(userId);
+		if(x >= board.getColumnsNumber() || x < 0 || y >= board.getRowsNumber() || y < 0)
+			throw new OutOfBoundsException();
 		cells = this.parseCells(board.getCells(), board.getRowsNumber(), board.getColumnsNumber());
 		cells[x][y].setMark("F");
 		String flattedCells = this.flatCells(cells);
@@ -99,7 +116,7 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		try {
 			boardRepository.save(board);
 		} catch(Exception e) {
-			//logging and exception throwing to be implemented...
+			logger.error("Error: " + e.getMessage());
 		}
 		return true;
 	}
@@ -116,6 +133,8 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		// all Cells on String[][] are represented for a two-letter-string
 		// first letter it's about Covered/Uncovered/Mine/Empty
 		// second letter it's about mark: Question/Red Flag/No mark
+		if(rows >= MAX_ROW || rows < 0 || columns >= MAX_COLUMN || columns < 0)
+			throw new OutOfBoundsException();
 
 		long userId = this.userService.getUserId();
 		BoardViewModel board = new BoardViewModel();
@@ -134,8 +153,7 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 			boardRepository.setAsInactiveAllCurrentUserBoard(userId);
 			boardRepository.save(boardModel);
 		} catch (Exception e) {
-			int a = 1;
-			//logging and exception throwing to be implemented...
+			logger.error("Error: " + e.getMessage());
 		}
 
 		return true;
@@ -151,7 +169,7 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 			board.setStatus("active");
 			boardRepository.save(board);
 		} catch (Exception e) {
-			//logging and exception throwing to be implemented...
+			logger.error("Error: " + e.getMessage());
 		}
 		return true;
 	}
@@ -176,7 +194,7 @@ public class MineSweeperServiceImpl implements MineSweeperService {
 		try {
 			savedGameRepository.save(savedGame);
 		} catch (Exception e) {
-			//logging and exception throwing to be implemented...
+			logger.error("Error: " + e.getMessage());
 		}
 		return true;
 	}
